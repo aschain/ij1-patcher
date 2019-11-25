@@ -320,14 +320,14 @@ public class LegacyInjector {
 		hacker.replaceCallInMethod("ij.gui.StackWindow",
 			"public <init>(ij.ImagePlus imp, ij.gui.ImageCanvas ic)",
 			"ij.gui.StackWindow",
-			"show",
-			"if (!ij.macro.Interpreter.batchMode) show();");
+			"setVisible",
+			"if (!ij.macro.Interpreter.batchMode) setVisible(true);");
 
 		// fix Window menu items being carelessly appended to the end, always
 		if (!headless) {
 			hacker.replaceCallInMethod("ij.Menus",
 				"static synchronized void addWindowMenuItem(ij.ImagePlus imp)",
-				"java.awt.Menu", "add",
+				"javax.swing.JMenu", "add",
 				"$0.insert($1, WINDOW_MENU_ITEMS + windowMenuItems2" +
 				"  + ij.WindowManager.getWindowCount() - 1);" +
 				"$_ = $1;");
