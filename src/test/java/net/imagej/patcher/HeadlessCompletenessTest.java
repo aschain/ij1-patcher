@@ -242,6 +242,7 @@ public class HeadlessCompletenessTest {
 		int separatorCounter = 0;
 		for (int i = 0; i < menu.getItemCount(); i++) {
 			final MenuItem item = menu.getItem(i);
+			if(item==null)continue;
 			final String label = item.getLabel();
 			String menuPath = prefix + label;
 			if (menuPath.startsWith("Help>Examples>")) {

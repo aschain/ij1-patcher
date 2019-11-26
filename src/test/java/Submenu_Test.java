@@ -76,7 +76,7 @@ public class Submenu_Test implements PlugIn {
 			}
 			for (int j = 0; j < ((Menu) menu).getItemCount(); j++) {
 				final MenuItem candidate = ((Menu) menu).getItem(j);
-				if (list[i].equals(candidate.getLabel())) {
+				if (candidate!=null && list[i].equals(candidate.getLabel())) {
 					menu = candidate;
 					continue outer;
 				}
