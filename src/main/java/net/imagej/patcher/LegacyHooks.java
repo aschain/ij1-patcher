@@ -633,6 +633,7 @@ public abstract class LegacyHooks {
 								}
 						}
 					}
+					jar.close();
 				}
 				catch (final IOException e) {
 					System.err
